@@ -16,10 +16,8 @@ public class WriteObjects {
 		ArrayList<Person> peopleList = new ArrayList<Person>(Arrays.asList(people));
 		
 		// Write Objects to file 
-		try(FileOutputStream fos = new FileOutputStream("people.txt"))
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("people.txt")))
 		{
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
 			oos.writeObject(people);
 			oos.writeObject(peopleList);
 			
@@ -28,8 +26,6 @@ public class WriteObjects {
 			for(Person person:peopleList) {
 				oos.writeObject(person);
 			}
-			
-			oos.close();
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

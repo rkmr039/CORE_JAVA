@@ -10,8 +10,7 @@ public class ReadObjects {
 	public static void main(String[] args) {
 		System.out.println("Reading Objects...");
 		
-		try(FileInputStream fis = new FileInputStream("people.txt"); 
-				ObjectInputStream ois = new ObjectInputStream(fis)){
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("people.txt"))){
 			
 			
 			Person[] people = (Person[])ois.readObject();
