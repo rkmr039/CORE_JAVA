@@ -9,22 +9,13 @@ public class WriteObjects {
 	public static void main(String[] args) {
 		System.out.println("Writing Objects....");
 		
-		
-		
-		Person p1 = new Person(534, "Sonu");
-		Person p2 = new Person(524, "Monu");
-		
-		System.out.println(p1);
-		System.out.println(p2);
+		Person[] people = {new Person(1,"Jenifer"),new Person(2,"Mike"),new Person(3,"Bob")};
 		
 		// Write Objects to file 
 		try(FileOutputStream fos = new FileOutputStream("people.txt"))
 		{
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
-			oos.writeObject(p1);
-			oos.writeObject(p2);
-			
+			oos.writeObject(people);
 			oos.close();
 			
 		} catch (FileNotFoundException e) {
