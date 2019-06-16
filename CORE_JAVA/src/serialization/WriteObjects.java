@@ -15,6 +15,9 @@ public class WriteObjects {
 		
 		ArrayList<Person> peopleList = new ArrayList<Person>(Arrays.asList(people));
 		
+		//Person person = new Person(8,"Harry");
+		Person.setCount(88);
+		
 		// Write Objects to file 
 		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("people.txt")))
 		{
